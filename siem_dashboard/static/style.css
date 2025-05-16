@@ -1,0 +1,354 @@
+/* Reset and Base Styles */
+body {
+    background-color: #F3F4F6; /* Light gray background */
+    color:black; /* Dark gray text for readability */
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px; /* Base font size for better readability */
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color:white;
+    font-size: 2.25rem; /* Larger heading for title */
+}
+
+h2 {
+    color:white;
+    font-size: 1.5rem;
+}
+
+h3 {
+    color:white;
+    font-size: 1.25rem;
+}
+
+p {
+    
+    margin-bottom: 1rem;
+}
+
+/* Center the dashboard content */
+.stApp {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for better scrolling */
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Tab Styling */
+div.stTabs [role="tablist"] {
+    background-color: #E5E7EB;
+     /* Light gray tab bar background */
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+div.stTabs [role="tab"] {
+    background-color: #FFFFFF;
+    color: black;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.stTabs [role="tab"][aria-selected="true"] {
+    background-color: #1D4ED8; /* Vibrant blue for active tab */
+    color: black;
+}
+
+div.stTabs [role="tab"]:hover {
+    background-color: #D1D5DB; /* Slightly darker gray on hover */
+    color: #111827;
+}
+
+div.stTabs [role="tab"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.3); /* Focus ring for accessibility */
+}
+
+/* Alert Table Styling */
+.alert-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-height: 450px;
+    display: block;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    border-radius: 0.5rem;
+    border: 1px solid #E5E7EB;
+}
+
+.alert-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.alert-table th {
+    background-color: #1D4ED8; /* Vibrant blue header */
+    color: #FFFFFF;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.alert-table th:hover {
+    background-color: #1E40AF; /* Darker blue on hover */
+}
+
+.alert-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #E5E7EB;
+    text-align: center;
+    vertical-align: middle;
+    color: #111827;
+}
+
+.alert-table tr:hover {
+    background-color: #F9FAFB; /* Very light gray on hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Severity Badges */
+.severity-badge {
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip::after {
+    content: attr(title);
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111827;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+
+/* Buttons */
+button, .stButton>button, .details-btn {
+    background-color: #1D4ED8; /* Vibrant blue */
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover, .stButton>button:hover, .details-btn:hover {
+    background-color: #1E40AF; /* Darker blue on hover */
+    transform: translateY(-1px);
+}
+
+button:focus, .stButton>button:focus, .details-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.3);
+}
+
+button:active, .stButton>button:active, .details-btn:active {
+    transform: translateY(0);
+}
+
+/* Sidebar */
+.stSidebar {
+    background-color: #0953f2;
+    color:white;
+    padding: 1.5rem;
+    border-right: 1px solid #E5E7EB;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.stSidebar h1 {
+    color:white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stSidebar .stButton>button {
+    color:white;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Metrics */
+.stMetric {
+    background-color: #FFFFFF;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E5E7EB;
+    transition: transform 0.2s ease;
+}
+
+.stMetric:hover {
+    transform: translateY(-2px);
+}
+
+.stMetric label, .stMetric div {
+    color: #111827 !important;
+    font-weight: 500;
+}
+
+.stMetric div {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #10B981; /* Green for success */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    margin: 15% auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.modal-content p {
+    margin: 0.5rem 0;
+    color: #111827;
+}
+
+.close-btn {
+    color: #6B7280;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #111827;
+}
+
+/* Streamlit Overrides */
+.stMarkdown p {
+    color: #6B7280;
+}
+
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stApp {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    div.stTabs [role="tab"] {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .alert-table {
+        font-size: 0.85rem;
+    }
+
+    .alert-table th, .alert-table td {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+}

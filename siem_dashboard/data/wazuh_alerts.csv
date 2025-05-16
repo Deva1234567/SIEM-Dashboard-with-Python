@@ -1,0 +1,11 @@
+timestamp,rule_description,agent_name,level
+2025-05-15T18:37:00Z,File modified in C:\Program Files,win-agent-01,5
+2025-05-15T18:38:00Z,Failed login attempt,win-agent-02,7
+2025-05-15T18:39:00Z,Registry key changed,win-agent-01,3
+2025-05-15T18:40:00Z,Suspicious network activity,win-agent-03,9
+2025-05-14T12:00:00Z,Unauthorized process started,win-agent-02,6
+2025-05-14T13:00:00Z,File deleted in system32,win-agent-01,8
+2025-05-13T09:00:00Z,Low-level audit event,win-agent-03,2
+2025-05-13T10:00:00Z,Failed login attempt,win-agent-02,7
+2025-05-12T15:00:00Z,Registry key changed,win-agent-01,3
+2025-05-12T16:00:00Z,Suspicious network activity,win-agent-03,10
